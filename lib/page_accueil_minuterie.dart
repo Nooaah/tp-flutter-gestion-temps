@@ -30,7 +30,7 @@ class PageAccueilMinuterie extends StatelessWidget {
                       couleur: Color(0xff009688),
                       texte: 'Travail',
                       taille: 20.0,
-                      action: () => BoutonGenerique.methodeVide(),
+                      action: () => minuteur.demarrerTravail(),
                     ),
                   ),
                   Padding(
@@ -41,7 +41,7 @@ class PageAccueilMinuterie extends StatelessWidget {
                       couleur: Color(0xff607D8B),
                       texte: 'Mini pause',
                       taille: 20.0,
-                      action: () => BoutonGenerique.methodeVide(),
+                      action: () => minuteur.demarrerPause(true),
                     ),
                   ),
                   Padding(
@@ -52,7 +52,7 @@ class PageAccueilMinuterie extends StatelessWidget {
                       couleur: Color(0xff455A64),
                       texte: 'Maxi pause',
                       taille: 20.0,
-                      action: () => BoutonGenerique.methodeVide(),
+                      action: () => minuteur.demarrerPause(false),
                     ),
                   ),
                   Padding(
