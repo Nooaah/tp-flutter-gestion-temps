@@ -11,6 +11,12 @@ class Minuteur {
   bool _estActif = true;
   Duration _temps = Duration();
   Duration _tempsTotal = Duration();
+  Duration tempsTravail = Duration(minutes: 30);
+
+  void demarrerTravail() {
+    _temps = tempsTravail;
+    _tempsTotal = tempsTravail;
+  }
 
   String retournerTemps(Duration t) {
     String minutes = (t.inMinutes < 10)
