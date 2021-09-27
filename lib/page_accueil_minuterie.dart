@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gestion_temps/widgets.dart';
+import 'package:percent_indicator/percent_indicator.dart';
 
 import 'main.dart';
 
@@ -55,7 +56,18 @@ class PageAccueilMinuterie extends StatelessWidget {
                   ),
                 ],
               ),
-              Expanded(child: Text('Bonjour')),
+              Expanded(
+                child: CircularPercentIndicator(
+                  radius: largeurDisponible / 2,
+                  lineWidth: 10.0,
+                  percent: 1,
+                  center: Text(
+                    '30:00',
+                    style: Theme.of(context).textTheme.headline4,
+                  ),
+                  progressColor: Color(0xff009688),
+                ),
+              ),
               Row(
                 children: <Widget>[
                   Padding(
