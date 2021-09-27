@@ -18,6 +18,16 @@ class Minuteur {
     _tempsTotal = tempsTravail;
   }
 
+  void arreterMinuteur() {
+    _estActif = false;
+  }
+
+  void relancerMinuteur() {
+    if (_temps.inMilliseconds > 0) {
+      _estActif = true;
+    }
+  }
+
   String retournerTemps(Duration t) {
     String minutes = (t.inMinutes < 10)
         ? '0' + t.inMinutes.toString()

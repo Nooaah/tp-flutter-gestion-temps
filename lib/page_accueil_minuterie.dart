@@ -95,7 +95,7 @@ class PageAccueilMinuterie extends StatelessWidget {
                       couleur: Color(0xff212121),
                       texte: 'Arrêter',
                       taille: 20.0,
-                      action: () => BoutonGenerique.methodeVide(),
+                      action: () => minuteur.arreterMinuteur(),
                     ),
                   ),
                   Padding(
@@ -106,7 +106,7 @@ class PageAccueilMinuterie extends StatelessWidget {
                       couleur: Color(0xff009688),
                       texte: 'Relancer',
                       taille: 20.0,
-                      action: () => BoutonGenerique.methodeVide(),
+                      action: () => minuteur.relancerMinuteur(),
                     ),
                   ),
                   Padding(
