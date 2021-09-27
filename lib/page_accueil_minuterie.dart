@@ -5,6 +5,20 @@ class PageAccueilMinuterie extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Ma gestion du temps'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              'Ma gestion du temps',
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
