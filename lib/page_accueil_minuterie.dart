@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gestion_temps/minuteur.dart';
+import 'package:gestion_temps/page_parametres.dart';
 import 'package:gestion_temps/widgets.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
@@ -10,10 +11,34 @@ class PageAccueilMinuterie extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List<PopupMenuItem<String>> elementsMenu = [];
+
     minuteur.demarrerTravail();
+
+    elementsMenu.add(PopupMenuItem(
+      value: 'Paramètres',
+      child: Text('Paramètres'),
+    ));
+
+    void allerParametres(BuildContext context) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => PageParametres(),
+        ),
+      );
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Ma gestion du temps'),
+        actions: <Widget>[
+          PopupMenuButton(itemBuilder: (BuildContext context) {
+            return elementsMenu.toList();
+          }, onSelected: (s) {
+            if (s == 'Paramètres') allerParametres(context);
+          }),
+        ],
       ),
       body: LayoutBuilder(
         builder: (BuildContext context, BoxConstraints contraints) {
