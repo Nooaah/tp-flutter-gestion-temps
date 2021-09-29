@@ -9,6 +9,10 @@ const TEMPS_TRAVAIL_DEFAUT = 30;
 const TEMPS_PAUSE_COURTE_DEFAUT = 5;
 const TEMPS_PAUSE_LONGUE_DEFAUT = 20;
 
+// 🐙🐙🐙
+// You can find all the commits of the creation of the application on my github
+// https://github.com/Nooaah/tp-flutter-gestion-temps
+
 void main() {
   runApp(MyApp());
 }
