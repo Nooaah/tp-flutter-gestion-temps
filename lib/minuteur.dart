@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'main.dart';
+
 class ModeleMinuteur {
   String temps;
   double pourcentage;
@@ -17,9 +19,11 @@ class Minuteur {
   Duration tempsPauseCourte = Duration(minutes: 5);
   Duration tempsPauseLongue = Duration(minutes: 20);
 
-  void demarrerTravail() {
-    _temps = tempsTravail;
-    _tempsTotal = tempsTravail;
+  void demarrerTravail() async {
+    await lireParametres();
+    _rayon = 1;
+    _temps = Duration(minutes: tempsTravail.inMinutes, seconds: 0);
+    _tempsTotal = _temps;
   }
 
   void arreterMinuteur() {
@@ -32,7 +36,17 @@ class Minuteur {
     }
   }
 
+  Future lireParametres() async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    tempsTravail = preferences.getInt(CLE_PAUSE_LONGUE) == null ? Duration(minutes: 30) : Duration(minutes: int.parse((preferences.getInt(CLE_TEMPS_TRAVAIL).toString())));
+    tempsPauseCourte =
+        preferences.getInt(CLE_PAUSE_COURTE) == null ? Duration(minutes: 5) : Duration(minutes: int.parse((preferences.getInt(CLE_PAUSE_COURTE).toString())));
+    tempsPauseLongue =
+        preferences.getInt(CLE_PAUSE_LONGUE) == null ? Duration(minutes: 20) : Duration(minutes: int.parse((preferences.getInt(CLE_PAUSE_LONGUE).toString())));
+  }
+
   void demarrerPause(bool estCourte) async {
+    await lireParametres();
     _rayon = 1;
     _temps = Duration(
       minutes:

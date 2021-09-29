@@ -27,7 +27,6 @@ class _ParametresState extends State<Parametres> {
   TextEditingController txtTempsTravail = TextEditingController();
   TextEditingController txtTempsPauseCourte = TextEditingController();
   TextEditingController txtTempsPauseLongue = TextEditingController();
-  late SharedPreferences preferences;
 
   @override
   void initState() {
@@ -154,6 +153,7 @@ class _ParametresState extends State<Parametres> {
   }
 
   void majParametres(String key, int value) async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
     switch (key) {
       case CLE_TEMPS_TRAVAIL:
         {
@@ -173,6 +173,9 @@ class _ParametresState extends State<Parametres> {
           int tempsPauseCourte =
               preferences.getInt(CLE_PAUSE_COURTE) ?? TEMPS_PAUSE_COURTE_DEFAUT;
           tempsPauseCourte += value;
+                      setState(() {
+              txtTempsPauseCourte.text = tempsPauseCourte.toString();
+            });
           if (tempsPauseCourte >= 1 && tempsPauseCourte <= 120) {
             preferences.setInt(CLE_PAUSE_COURTE, tempsPauseCourte);
             setState(() {
