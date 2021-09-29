@@ -77,7 +77,7 @@ class _ParametresState extends State<Parametres> {
         Text(''),
         Text(''),
         BoutonParametre(
-          couleur: Color(0xff455A64),
+          couleur: Color(0xff212121),
           texte: '-',
           valeur: -1,
           parametre: CLE_TEMPS_TRAVAIL,
@@ -90,7 +90,7 @@ class _ParametresState extends State<Parametres> {
           keyboardType: TextInputType.number,
         ),
         BoutonParametre(
-          couleur: Color(0xff009688),
+          couleur: Color(0xff4caf50),
           texte: '+',
           valeur: 1,
           parametre: CLE_TEMPS_TRAVAIL,
@@ -103,7 +103,7 @@ class _ParametresState extends State<Parametres> {
         Text(''),
         Text(''),
         BoutonParametre(
-          couleur: Color(0xff455A64),
+          couleur: Color(0xff212121),
           texte: '-',
           valeur: -1,
           parametre: CLE_PAUSE_COURTE,
@@ -116,7 +116,7 @@ class _ParametresState extends State<Parametres> {
           keyboardType: TextInputType.number,
         ),
         BoutonParametre(
-          couleur: Color(0xff009688),
+          couleur: Color(0xff4caf50),
           texte: '+',
           valeur: 1,
           parametre: CLE_PAUSE_COURTE,
@@ -129,7 +129,7 @@ class _ParametresState extends State<Parametres> {
         Text(''),
         Text(''),
         BoutonParametre(
-          couleur: Color(0xff455A64),
+          couleur: Color(0xff212121),
           texte: '-',
           valeur: -1,
           parametre: CLE_PAUSE_LONGUE,
@@ -142,7 +142,7 @@ class _ParametresState extends State<Parametres> {
           keyboardType: TextInputType.number,
         ),
         BoutonParametre(
-          couleur: Color(0xff009688),
+          couleur: Color(0xff4caf50),
           texte: '+',
           valeur: 1,
           parametre: CLE_PAUSE_LONGUE,
@@ -173,9 +173,9 @@ class _ParametresState extends State<Parametres> {
           int tempsPauseCourte =
               preferences.getInt(CLE_PAUSE_COURTE) ?? TEMPS_PAUSE_COURTE_DEFAUT;
           tempsPauseCourte += value;
-                      setState(() {
-              txtTempsPauseCourte.text = tempsPauseCourte.toString();
-            });
+          setState(() {
+            txtTempsPauseCourte.text = tempsPauseCourte.toString();
+          });
           if (tempsPauseCourte >= 1 && tempsPauseCourte <= 120) {
             preferences.setInt(CLE_PAUSE_COURTE, tempsPauseCourte);
             setState(() {

@@ -48,11 +48,11 @@ class PageAccueilMinuterie extends StatelessWidget {
               Row(
                 children: <Widget>[
                   Padding(
-                    padding: EdgeInsets.all(REMPLISSAGE_DEFAUT),
+                    padding: EdgeInsets.only(top:70,left:REMPLISSAGE_DEFAUT,right: REMPLISSAGE_DEFAUT),
                   ),
                   Expanded(
                     child: BoutonGenerique(
-                      couleur: Color(0xff009688),
+                      couleur: Color(0xff357a38),
                       texte: 'Travail',
                       taille: 20.0,
                       action: () => minuteur.demarrerTravail(),
@@ -63,7 +63,7 @@ class PageAccueilMinuterie extends StatelessWidget {
                   ),
                   Expanded(
                     child: BoutonGenerique(
-                      couleur: Color(0xff607D8B),
+                      couleur: Color(0xff4caf50),
                       texte: 'Mini pause',
                       taille: 20.0,
                       action: () => minuteur.demarrerPause(true),
@@ -74,7 +74,7 @@ class PageAccueilMinuterie extends StatelessWidget {
                   ),
                   Expanded(
                     child: BoutonGenerique(
-                      couleur: Color(0xff455A64),
+                      couleur: Color(0xff6fbf73),
                       texte: 'Maxi pause',
                       taille: 20.0,
                       action: () => minuteur.demarrerPause(false),
@@ -104,7 +104,7 @@ class PageAccueilMinuterie extends StatelessWidget {
                           (minuteur.temps == null) ? '00:00' : minuteur.temps,
                           style: Theme.of(context).textTheme.headline4,
                         ),
-                        progressColor: Color(0xff009688),
+                        progressColor: Color(0xff4caf50),
                       ),
                     );
                   },
@@ -128,7 +128,7 @@ class PageAccueilMinuterie extends StatelessWidget {
                   ),
                   Expanded(
                     child: BoutonGenerique(
-                      couleur: Color(0xff009688),
+                      couleur: Color(0xff357a38),
                       texte: 'Relancer',
                       taille: 20.0,
                       action: () => minuteur.relancerMinuteur(),
