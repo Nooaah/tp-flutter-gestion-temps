@@ -1,16 +1,20 @@
-# gestion_temps
+# TP2 - Time management application
 
-A new Flutter project.
+![Flutter application development](https://zupimages.net/up/21/39/q1vk.png)
 
-## Getting Started
+Time management application is a cross-platform application made in Flutter.
 
-This project is a starting point for a Flutter application.
+TP n°2 for FISA-TI 2023 at IMT Nord Europe.
 
-A few resources to get you started if this is your first Flutter project:
+## Installation
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Use the package manager [flutter](https://flutter.dev/) to install the app.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+flutter run
+```
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
