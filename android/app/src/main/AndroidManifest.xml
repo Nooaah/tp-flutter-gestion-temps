@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.gestion_temps">
    <application
-        android:label="gestion_temps"
+        android:label="TP2 Noah Chatelain"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

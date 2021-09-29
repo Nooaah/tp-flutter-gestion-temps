@@ -104,6 +104,7 @@ class PageAccueilMinuterie extends StatelessWidget {
                           (minuteur.temps == null) ? '00:00' : minuteur.temps,
                           style: Theme.of(context).textTheme.headline4,
                         ),
+                        backgroundColor: Color(0xff357a38),
                         progressColor: Color(0xff4caf50),
                       ),
                     );
